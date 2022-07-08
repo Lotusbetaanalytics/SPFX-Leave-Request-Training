@@ -2,14 +2,28 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { AiFillAppstore, AiFillCalendar, AiOutlineLogout } from "react-icons/ai"
 import { BsBarChartFill } from "react-icons/bs"
+import { sp } from '@pnp/sp'
 const Navigation = () => {
+
+
+    const [name, setName] = React.useState("")
+    const [photo, setPhoto] = React.useState("")
+
+    React.useEffect(() => {
+        sp.profiles.myProperties.get().then((response) => {
+            setName(response.DisplayName)
+            setPhoto(response.PictureUrl)
+        });
+    }, [])
     return (
         <div className='navigation'>
 
             {/* Profile */}
             <div className='profile'>
-                <div className='dp'></div>
-                <div className='name'>John Doe</div>
+                <div className='dp'>
+                    <img src={photo} alt={name} />
+                </div>
+                <div className='name'>{name}</div>
             </div>
             {/* End of Profile */}
 

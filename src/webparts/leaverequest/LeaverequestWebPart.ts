@@ -10,18 +10,28 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import * as strings from 'LeaverequestWebPartStrings';
 import Leaverequest from './components/Leaverequest';
 import { ILeaverequestProps } from './components/ILeaverequestProps';
+import { sp } from "@pnp/sp/presets/all";
 
 export interface ILeaverequestWebPartProps {
   description: string;
 }
 
 export default class LeaverequestWebPart extends BaseClientSideWebPart<ILeaverequestWebPartProps> {
+  public onInit(): Promise<void> { 
+  
+    sp.setup({
+      spfxContext: this.context
+    });
+    return Promise.resolve(); 
+  }
 
   public render(): void {
     const element: React.ReactElement<ILeaverequestProps> = React.createElement(
       Leaverequest,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        context: this.context,  
+        pageContext: this.context.pageContext
       }
     );
 
