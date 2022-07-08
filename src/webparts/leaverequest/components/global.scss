@@ -1,0 +1,260 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(89.43deg, #9DE1FE 32.65%, rgba(128, 210, 245, 0) 101.43%), url('./assets/background3.jpg') no-repeat;
+background-size: cover;
+background-position: right;
+background-size: cover;
+z-index: 9999;
+color: white;
+animation: slideBg 20s linear infinite 8s;
+animation-timing-function: ease-in-out;
+padding: 5rem;
+justify-content: center;
+
+h1{
+    font-size: 2rem;
+    color: black;
+}
+h3{
+    font-style: 1rem;
+    color: #794425;
+}
+
+}
+
+@keyframes slideBg {
+0% {
+    background:linear-gradient(89.43deg, #9DE1FE 32.65%, rgba(128, 210, 245, 0) 101.43%), url('./assets/background1.jpg') no-repeat;;
+    background-size: cover;
+}
+
+25% {
+    background: linear-gradient(89.43deg, #9DE1FE 32.65%, rgba(128, 210, 245, 0) 101.43%), url('./assets/background2.jpg') no-repeat;
+    background-size: cover;
+}
+
+50% {
+    background: linear-gradient(89.43deg, #9DE1FE 32.65%, rgba(128, 210, 245, 0) 101.43%), url('./assets/background1.jpg') no-repeat;
+    background-size: cover;
+}
+
+75% {
+    background: linear-gradient(89.43deg, #9DE1FE 32.65%, rgba(128, 210, 245, 0) 101.43%), url('./assets/background2.jpg') no-repeat;
+    background-size: cover;
+}
+
+100% {
+    background: linear-gradient(89.43deg, #9DE1FE 32.65%, rgba(128, 210, 245, 0) 101.43%), url('./assets/background3.jpg') no-repeat;
+    background-size: cover;
+}
+}
+.btnContainer{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn{
+    display: flex;
+    padding: 1.5rem 3rem;
+    background: #13678B;
+color: white;
+outline: none;
+border: none;
+border-radius: 30px;
+box-shadow: 0px 4px 30px 2px rgba(82, 188, 234, 0.65);
+text-decoration: none;
+}
+
+.mainContainer{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: whitesmoke;
+}
+
+.navigation{
+    display: flex;
+    flex: 0.15;
+    height: 100vh;
+    flex-direction: column;
+    background: rgba(157, 225, 254, 0.37);
+    padding: 5rem 0;
+    .profile{
+        display: flex;
+        flex-direction: column;
+        padding: .5rem;
+        align-items: center;
+        margin-bottom: 3rem;
+    
+        .dp{
+            display: flex;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: url('./assets/background1.jpg');
+            border: 2px solid white;
+            margin-bottom: .5rem;
+            background-position: center;
+        }
+        .name{
+            display: flex;
+            text-align: center;
+        }
+    }
+
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
+    .links ul {
+        padding:0;
+        margin:0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+    .links ul li{
+        padding:.5rem 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .links ul li:hover{
+        background: #13678B;
+    }
+    .links ul li a{
+        text-decoration: none;
+        color:#794425;
+        font-size: 1.1rem;
+    }
+    .links ul li a svg{
+       margin-right: .5rem;
+       font-size: 13px;
+    }
+}
+
+.contentsRight{
+    display: flex;
+    flex: 0.85;
+    flex-direction: column;
+    overflow-y: scroll;
+    flex-grow: 1;
+}
+
+.header{
+    display: flex;
+   justify-content: space-between;
+   padding: 1rem 2rem;
+   .title{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1rem;
+    font-weight: bold;
+   }
+   .profile{
+    display: flex;
+    justify-content: flex-end;
+   }
+}
+
+.contents{
+    display: flex;
+    padding: 1rem 2rem;
+
+    .cardFlex{
+        display: flex;
+        flex: 0.6;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .card{
+            display: flex;
+            flex-basis: 30%;
+            flex-direction: column;
+            background: white;
+
+            .cardTop{
+                display: flex;
+                padding: 2rem;
+                flex-direction: column;
+                align-items: center;
+
+                .icon{
+                    display: flex;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    padding: 10px;
+                    align-items: center;
+                    justify-content: center;
+                    svg{
+                        font-size: 2rem;
+                        text-align: center;
+                    }
+                }
+                .text{
+                    display: flex;
+                    padding: 1rem;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    h3{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            .cardBottom{
+                display: flex;
+                justify-content: center;
+                padding: 1rem;
+            }
+        }
+
+    }
+    .calender{
+        display: flex;
+        flex-direction: column;
+        flex: 0.4;
+    }
+}
+
+
+.green{
+    background: #077C21;
+    color: white;
+}
+.lightGreen{
+    background: #13678B2E;
+
+color:#077C21;
+}
+
+
+.red{
+ background: #F24E1E;
+ color: white;
+}
+.lightRed{
+    background: #F24E1E2E;
+color:#F24E1E;
+}
+.blue{
+    background: #13678B;
+    color: white;
+
+   }
+   .lightBlue{
+    background: #13678B2E;
+color:#13678B;
+}
